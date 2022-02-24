@@ -23,10 +23,12 @@
 		469FFB8627C6C1A500AA184F /* QueryTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8527C6C1A500AA184F /* QueryTagView.swift */; };
 		469FFB8827C6C6D200AA184F /* VideoPreviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8727C6C6D200AA184F /* VideoPreviewCard.swift */; };
 		469FFB8A27C6CDEB00AA184F /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8927C6CDEA00AA184F /* VideoModel.swift */; };
-		469FFB8D27C6D18D00AA184F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8C27C6D18D00AA184F /* NetworkHelper.swift */; };
+		469FFB8D27C6D18D00AA184F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8C27C6D18D00AA184F /* NetworkManager.swift */; };
 		469FFB8F27C6DE3500AA184F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8E27C6DE3500AA184F /* HomeViewModel.swift */; };
 		469FFB9127C6DED100AA184F /* HomeViewServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB9027C6DED100AA184F /* HomeViewServiceProtocol.swift */; };
 		469FFB9327C6DF6B00AA184F /* HomeViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB9227C6DF6B00AA184F /* HomeViewService.swift */; };
+		469FFB9627C7B6E800AA184F /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB9527C7B6E800AA184F /* TextExtensions.swift */; };
+		469FFB9D27C7B9D100AA184F /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB9C27C7B9D100AA184F /* VideoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +49,12 @@
 		469FFB8527C6C1A500AA184F /* QueryTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryTagView.swift; sourceTree = "<group>"; };
 		469FFB8727C6C6D200AA184F /* VideoPreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewCard.swift; sourceTree = "<group>"; };
 		469FFB8927C6CDEA00AA184F /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
-		469FFB8C27C6D18D00AA184F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		469FFB8C27C6D18D00AA184F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		469FFB8E27C6DE3500AA184F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		469FFB9027C6DED100AA184F /* HomeViewServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewServiceProtocol.swift; sourceTree = "<group>"; };
 		469FFB9227C6DF6B00AA184F /* HomeViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewService.swift; sourceTree = "<group>"; };
+		469FFB9527C7B6E800AA184F /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
+		469FFB9C27C7B9D100AA184F /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +87,11 @@
 		469FFB4327C6B89700AA184F /* SwiftUIVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				469FFB5327C6B8A200AA184F /* Feature */,
-				469FFB5227C6B89B00AA184F /* Core */,
-				469FFB4427C6B89700AA184F /* StartApp.swift */,
 				469FFB4827C6B89700AA184F /* Assets.xcassets */,
+				469FFB5227C6B89B00AA184F /* Core */,
+				469FFB5327C6B8A200AA184F /* Feature */,
 				469FFB4A27C6B89700AA184F /* Preview Content */,
+				469FFB4427C6B89700AA184F /* StartApp.swift */,
 			);
 			path = SwiftUIVideoPlayer;
 			sourceTree = "<group>";
@@ -103,10 +107,10 @@
 		469FFB5227C6B89B00AA184F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				469FFB8B27C6D06600AA184F /* Helpers */,
-				469FFB6A27C6BA8200AA184F /* Init */,
 				469FFB5527C6B8C600AA184F /* Constants */,
 				469FFB5427C6B8C100AA184F /* Extensions */,
+				469FFB8B27C6D06600AA184F /* Managers */,
+				469FFB6A27C6BA8200AA184F /* Init */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -131,9 +135,9 @@
 		469FFB5527C6B8C600AA184F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB5927C6B90D00AA184F /* Assets */,
 				469FFB5B27C6B91700AA184F /* Enums */,
 				469FFB5A27C6B91200AA184F /* Routes */,
-				469FFB5927C6B90D00AA184F /* Assets */,
 				469FFB5827C6B90600AA184F /* Theme */,
 			);
 			path = Constants;
@@ -142,6 +146,7 @@
 		469FFB5727C6B8DE00AA184F /* TextExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB9527C7B6E800AA184F /* TextExtensions.swift */,
 			);
 			path = TextExtensions;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 		469FFB6E27C6BAB100AA184F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB9727C7B9AA00AA184F /* Video */,
 				469FFB7027C6BABB00AA184F /* Home */,
 			);
 			path = View;
@@ -208,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				469FFB8027C6C00900AA184F /* Enums */,
+				469FFB9427C7B6BA00AA184F /* Extensions */,
 				469FFB7927C6BB4000AA184F /* SubViews */,
 			);
 			path = Product;
@@ -291,12 +298,59 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		469FFB8B27C6D06600AA184F /* Helpers */ = {
+		469FFB8B27C6D06600AA184F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				469FFB8C27C6D18D00AA184F /* NetworkHelper.swift */,
+				469FFB8C27C6D18D00AA184F /* NetworkManager.swift */,
 			);
-			path = Helpers;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		469FFB9427C7B6BA00AA184F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		469FFB9727C7B9AA00AA184F /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				469FFB9A27C7B9C100AA184F /* Model */,
+				469FFB9B27C7B9C600AA184F /* Service */,
+				469FFB9827C7B9B500AA184F /* View */,
+				469FFB9927C7B9BB00AA184F /* ViewModel */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		469FFB9827C7B9B500AA184F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				469FFB9C27C7B9D100AA184F /* VideoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		469FFB9927C7B9BB00AA184F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		469FFB9A27C7B9C100AA184F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		469FFB9B27C7B9C600AA184F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,13 +432,15 @@
 				469FFB7F27C6BCC500AA184F /* PlayButtonView.swift in Sources */,
 				469FFB6727C6BA4100AA184F /* ImageConstants.swift in Sources */,
 				469FFB5E27C6B93000AA184F /* LocaleKeys.swift in Sources */,
-				469FFB8D27C6D18D00AA184F /* NetworkHelper.swift in Sources */,
+				469FFB8D27C6D18D00AA184F /* NetworkManager.swift in Sources */,
 				469FFB6927C6BA6000AA184F /* TextTheme.swift in Sources */,
 				469FFB6327C6B9E700AA184F /* RoutesConstants.swift in Sources */,
 				469FFB6527C6BA2700AA184F /* ColorConstants.swift in Sources */,
 				469FFB8227C6C01C00AA184F /* QueryTags.swift in Sources */,
 				469FFB9127C6DED100AA184F /* HomeViewServiceProtocol.swift in Sources */,
 				469FFB4527C6B89700AA184F /* StartApp.swift in Sources */,
+				469FFB9D27C7B9D100AA184F /* VideoView.swift in Sources */,
+				469FFB9627C7B6E800AA184F /* TextExtensions.swift in Sources */,
 				469FFB6027C6B95F00AA184F /* NetworkPaths.swift in Sources */,
 				469FFB8827C6C6D200AA184F /* VideoPreviewCard.swift in Sources */,
 			);

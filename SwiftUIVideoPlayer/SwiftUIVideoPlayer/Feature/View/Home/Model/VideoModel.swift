@@ -6,7 +6,9 @@
 import Foundation
 
  // MARK: - VideoModel
-struct VideoModel: Codable {
+struct VideoModel: Codable , Identifiable{
+ var id = UUID()
+
  let page, perPage, totalResults: Int?
  let url: String?
  let videos: [Video]?
@@ -20,14 +22,14 @@ struct VideoModel: Codable {
 }
 
  // MARK: - Video
-struct Video: Codable {
- let id, width, height: Int?
- let url: String?
- let image: String?
- let duration: Int?
- let user: User?
- let videoFiles: [VideoFile]?
- let videoPictures: [VideoPicture]?
+struct Video: Codable, Identifiable {
+ let id, width, height: Int
+ let url: String
+ let image: String
+ let duration: Int
+ let user: User
+ let videoFiles: [VideoFile]
+ let videoPictures: [VideoPicture]
 
  enum CodingKeys: String, CodingKey {
   case id, width, height, url, image, duration, user

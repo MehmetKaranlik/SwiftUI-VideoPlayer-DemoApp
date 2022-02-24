@@ -9,9 +9,9 @@ import Foundation
 
 
 protocol HomeViewServiceProtocol {
- var networkManager : NetworkHelper { get  }
+ var networkManager : NetworkManager { get  }
 
- func getVideos(query: String)  -> VideoModel?
+ func getVideos(query: String, completionHandler : @escaping ([Video]) -> Void)  -> Void
 
  }
 

@@ -8,24 +8,19 @@
 import SwiftUI
 
 struct VideoPreviewCard: View {
-
-
+ let video : Video?
  var body: some View {
-
-   ZStack(alignment: .bottomLeading) {
-
-    AsyncImage(url: URL(string: "")) { image in
-     image
-      .imageExtension()
-    } placeholder: {
-     Rectangle()
-      .rectangleExtension()
-    }
-    buildLabel(duration: "32", author: "XYZ")
+  ZStack(alignment: .bottomLeading) {
+   AsyncImage(url: URL(string: video?.image ?? "")) { image in
+    image
+     .imageExtension()
+   } placeholder: {
+    Rectangle()
+     .rectangleExtension()
    }
-   .overlay {
-    PlayButtonView()
-   }
+   buildLabel(duration: video?.duration.description ?? "0", author: video?.user.name ?? "")
+  }
+
 
 
 
@@ -33,17 +28,25 @@ struct VideoPreviewCard: View {
 
 
  fileprivate func buildLabel(duration : String, author : String) -> some View {
-  return VStack {
+  return VStack(alignment:.leading,spacing: 5) {
+
    Text(duration + "sec")
-   Text(author)
+    .bold()
+
+   Text(author.trimToLength(length: 10))
+    .bold()
+
+
   }
+  .foregroundColor(.white)
   .padding()
+
  }
 }
 
 struct VideoPreviewCard_Previews: PreviewProvider {
  static var previews: some View {
-  VideoPreviewCard()
+  VideoPreviewCard(video: nil)
    .previewLayout(.sizeThatFits)
  }
 }
@@ -57,6 +60,9 @@ extension Image {
    .aspectRatio(contentMode: .fill)
    .frame(width: 160, height: 250, alignment: .center)
    .cornerRadius(30)
+   .overlay {
+    PlayButtonView()
+   }
  }
 }
 
@@ -67,5 +73,8 @@ extension Rectangle {
    .foregroundColor(ColorConstants.shared.backgroundGray.opacity(0.3))
    .frame(width: 160, height: 250, alignment: .center)
    .cornerRadius(30)
+   .overlay {
+    ProgressView()
+   }
  }
 }

@@ -12,15 +12,15 @@ enum Errors : Error {
  case bad_url
 }
 
-struct NetworkHelper {
+struct NetworkManager {
 
- static let shared : NetworkHelper = NetworkHelper()
+ static let shared : NetworkManager = NetworkManager()
 
  private init() {}
 
- func get<T: Codable>(networkPath: String, model : T.Type)  -> T? {
-  var temp : T?
-  guard let url : URL = URL(string: NetworkPaths.base_url.key + networkPath) else {fatalError()}
+ 
+ func get<T: Codable>(networkPath: String, model : T.Type, completionHandler : @escaping (T) -> Void)  {
+  guard let url : URL = URL(string: NetworkPaths.base_url.key + networkPath) else {fatalError("Bad URL")}
   var request = URLRequest(url: url)
   request.addValue(NetworkPaths.token.key, forHTTPHeaderField: "Authorization")
   let dataTask =  URLSession.shared.dataTask(with: request) { data, response, error in
@@ -33,19 +33,19 @@ struct NetworkHelper {
     guard let rawJson = data else {return}
     DispatchQueue.main.async {
      do {
-      let decodedData = try JSONDecoder().decode(T.self, from: rawJson)
-      print(decodedData)
-      temp = decodedData
+      let decodedData = try JSONDecoder().decode(model, from: rawJson)
+      completionHandler(decodedData)
      }
      catch {
-      print("Json serialization error : \(error)")
+      fatalError("Json serialization error : \(error)")
      }
     }
    } // end of if
   } // end of data task
 
   dataTask.resume()
-  return temp ?? nil
+
+
 
  }
 
