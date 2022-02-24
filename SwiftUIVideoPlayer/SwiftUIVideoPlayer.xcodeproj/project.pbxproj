@@ -22,6 +22,11 @@
 		469FFB8227C6C01C00AA184F /* QueryTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8127C6C01C00AA184F /* QueryTags.swift */; };
 		469FFB8627C6C1A500AA184F /* QueryTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8527C6C1A500AA184F /* QueryTagView.swift */; };
 		469FFB8827C6C6D200AA184F /* VideoPreviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8727C6C6D200AA184F /* VideoPreviewCard.swift */; };
+		469FFB8A27C6CDEB00AA184F /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8927C6CDEA00AA184F /* VideoModel.swift */; };
+		469FFB8D27C6D18D00AA184F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8C27C6D18D00AA184F /* NetworkHelper.swift */; };
+		469FFB8F27C6DE3500AA184F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB8E27C6DE3500AA184F /* HomeViewModel.swift */; };
+		469FFB9127C6DED100AA184F /* HomeViewServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB9027C6DED100AA184F /* HomeViewServiceProtocol.swift */; };
+		469FFB9327C6DF6B00AA184F /* HomeViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFB9227C6DF6B00AA184F /* HomeViewService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		469FFB8127C6C01C00AA184F /* QueryTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryTags.swift; sourceTree = "<group>"; };
 		469FFB8527C6C1A500AA184F /* QueryTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryTagView.swift; sourceTree = "<group>"; };
 		469FFB8727C6C6D200AA184F /* VideoPreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewCard.swift; sourceTree = "<group>"; };
+		469FFB8927C6CDEA00AA184F /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		469FFB8C27C6D18D00AA184F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		469FFB8E27C6DE3500AA184F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		469FFB9027C6DED100AA184F /* HomeViewServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewServiceProtocol.swift; sourceTree = "<group>"; };
+		469FFB9227C6DF6B00AA184F /* HomeViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,7 @@
 		469FFB5227C6B89B00AA184F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB8B27C6D06600AA184F /* Helpers */,
 				469FFB6A27C6BA8200AA184F /* Init */,
 				469FFB5527C6B8C600AA184F /* Constants */,
 				469FFB5427C6B8C100AA184F /* Extensions */,
@@ -224,6 +235,8 @@
 		469FFB7227C6BAC900AA184F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB9027C6DED100AA184F /* HomeViewServiceProtocol.swift */,
+				469FFB9227C6DF6B00AA184F /* HomeViewService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -231,6 +244,7 @@
 		469FFB7327C6BACD00AA184F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB8927C6CDEA00AA184F /* VideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 		469FFB7427C6BAD100AA184F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				469FFB8E27C6DE3500AA184F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -274,6 +289,14 @@
 				469FFB8127C6C01C00AA184F /* QueryTags.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		469FFB8B27C6D06600AA184F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				469FFB8C27C6D18D00AA184F /* NetworkHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,15 +370,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				469FFB7827C6BB0D00AA184F /* HomeView.swift in Sources */,
+				469FFB9327C6DF6B00AA184F /* HomeViewService.swift in Sources */,
 				469FFB6D27C6BAA300AA184F /* LocaleManager.swift in Sources */,
 				469FFB8627C6C1A500AA184F /* QueryTagView.swift in Sources */,
+				469FFB8F27C6DE3500AA184F /* HomeViewModel.swift in Sources */,
+				469FFB8A27C6CDEB00AA184F /* VideoModel.swift in Sources */,
 				469FFB7F27C6BCC500AA184F /* PlayButtonView.swift in Sources */,
 				469FFB6727C6BA4100AA184F /* ImageConstants.swift in Sources */,
 				469FFB5E27C6B93000AA184F /* LocaleKeys.swift in Sources */,
+				469FFB8D27C6D18D00AA184F /* NetworkHelper.swift in Sources */,
 				469FFB6927C6BA6000AA184F /* TextTheme.swift in Sources */,
 				469FFB6327C6B9E700AA184F /* RoutesConstants.swift in Sources */,
 				469FFB6527C6BA2700AA184F /* ColorConstants.swift in Sources */,
 				469FFB8227C6C01C00AA184F /* QueryTags.swift in Sources */,
+				469FFB9127C6DED100AA184F /* HomeViewServiceProtocol.swift in Sources */,
 				469FFB4527C6B89700AA184F /* StartApp.swift in Sources */,
 				469FFB6027C6B95F00AA184F /* NetworkPaths.swift in Sources */,
 				469FFB8827C6C6D200AA184F /* VideoPreviewCard.swift in Sources */,

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
 
+ @ObservedObject var viewModel : HomeViewModel = HomeViewModel()
+
 
  var body: some View {
      ZStack {
@@ -19,7 +21,12 @@ struct HomeView: View {
        
       }
      }
+     .task {
+      viewModel.getVideos()
+     }
     }
+
+  
 
 
 
